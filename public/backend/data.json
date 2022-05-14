@@ -1,10 +1,10 @@
 {
     "data":[
-         {"id":1,"name":"Xhekpon® crema facial 40ml","image":"xhekpon-crema.jpg","price":"6,49"}, 
-         {"id":2,"name":"Cerave ® Crema Hidratante 340ml","image":"cerave-crema.jpg","price":"11,70"},
-         {"id":3,"name":"Hyabak Solución 10ml","image":"hyabak-solucion.jpg","price":"9,48"},
-         {"id":4,"name":"Fotoprotector ISDIN","image":"fotoprotector-isdin.jpg","price":"10,50"},
-         {"id":5,"name":"La justicia Colageno","image":"lajusticia-colageno.jpg","price":"12,50"},
-         {"id":6,"name":"Piz Buin","image":"piz-buin.jpg.jpg","price":"6,30"}
+         {"id":1,"name":"Xhekpon® crema facial 40ml","image":"xhekpon-crema.jpg","price":"6,49","selected":false}, 
+         {"id":2,"name":"Cerave ® Crema Hidratante 340ml","image":"cerave-crema.jpg","price":"11,70","selected":false},
+         {"id":3,"name":"Hyabak Solución 10ml","image":"hyabak-solucion.jpg","price":"9,48","selected":false},
+         {"id":4,"name":"Fotoprotector ISDIN","image":"fotoprotector-isdin.jpg","price":"10,50","selected":false},
+         {"id":5,"name":"La justicia Colageno","image":"lajusticia-colageno.jpg","price":"12,50","selected":true},
+         {"id":6,"name":"Piz Buin","image":"piz-buin.jpg.jpg","price":"6,30","selected":false}
     ]
 }

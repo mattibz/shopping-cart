@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { Profiler, useEffect, useState } from 'react'
+import { SpinnerRoundFilled } from 'spinners-react';
+import toast, { Toaster } from 'react-hot-toast';
 
-const ProductsListComponent = () => {
+const ProductsListComponent = ({products,setProducts}) => {
 
 
-    const [products,setProducts] = useState([]);
+    //const [products,setProducts] = useState([]);
     const [loading,setLoading] = useState(true);
 
     useEffect(() => {
@@ -13,9 +15,10 @@ const ProductsListComponent = () => {
 
     },[]);
 
+
     const getProducts = () => {
 
-        setTimeout( async () => {  // simulamos una request asincrona con un delay de 3 seg.
+        setTimeout( async () => {  // simulamos una request asincrona con un delay de 5 seg.
 
             try{
             
@@ -30,14 +33,39 @@ const ProductsListComponent = () => {
                 console.log(`error from getProducts() : ${ex.message}`)
             }
 
-        },3000);
+        },1000);
 
     }
+
+    const addProductToCart = (id) => {
+        
+
+        const productsListUpdate = products.map( product => {
+
+            if(product.id === id) {
+                    product.selected = true;
+                    console.log(` product with name ${product.name} added to cart.`);
+            } 
+
+            return product;
+
+        });
+
+        setProducts(productsListUpdate);
+        console.log('product list updated ...');
+       
+    }
+
+    const notify = () => toast('You can not add more of this product to the cart');
+
 
     if(loading){
         return(
             <>
-                <p>Loading products ...</p>
+                <div>
+                    <SpinnerRoundFilled size='150' speed='100'/>
+                    <p>Loading products ...</p>
+                </div>
             </>
         )
 
@@ -45,40 +73,42 @@ const ProductsListComponent = () => {
 
         return(
             <>
+                 <Toaster></Toaster>
+
                 {
                     products.map(product => {
-                        return (
-                            <>
-                            <div key={product.id}> 
-                                <p>{product.name}</p> 
-                                <h3>{product.price} €</h3>
-                                <button><img src={require('../assets/icono/add-to-cart.png')}/></button>
-                            </div>
-                            </>
-                        )
+
+                        if(product.selected){
+
+                            return(
+                                <>
+                                     <Toaster position='top-left'></Toaster>
+                                    <div className='disable' key={product.id}> 
+                                        <p>{product.name}</p> 
+                                        <h3>{product.price} €</h3>
+                                        <button onClick={ notify }><img src={require('../assets/icono/add-to-cart.png')}/></button>
+                                    </div>
+                                </>
+                            ) 
+
+                        }else{
+
+                            return(
+                                <>
+                                    <div key={product.id}> 
+                                        <p>{product.name}</p> 
+                                        <h3>{product.price} €</h3>
+                                        <button onClick= { () => addProductToCart(product.id) }><img src={require('../assets/icono/add-to-cart.png')}/></button>
+                                    </div>
+                                </>
+                            ) 
+                        }
+
                     })
                 }
             </>
         )
-
     }
-
-    /*return(
-        <>
-        <div>
-            <p>Cerave ® Crema Hidratante 340ml</p>
-            <h3>11,70 €</h3>
-            <button><img src={require('../assets/icono/add-to-cart.png')}/></button>
-        </div>
-
-        <div className="disable">
-            <p>Cerave ® Crema Hidratante 340ml</p>
-            <h3>11,70 €</h3>
-            <button><img src={require('../assets/icono/add-to-cart.png')}/></button>
-        </div>
-        </>
-    )*/
-
 
 }
 
