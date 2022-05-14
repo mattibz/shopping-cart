@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
 
 }
 
@@ -21,12 +21,71 @@ body {
 .flexbox-item-1 {
     
     order: 1;
-    border: 1px solid black;
-    width: 700px;
-    height: 500px;
+    width: auto;
+    height: auto;
     padding: 10px;
-    margin: 5px; 
+    margin: 10px; 
 
+}
+
+.flexbox-item-1 div {
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: auto;
+    height: auto;
+
+}
+
+.flexbox-item-1 div p {
+
+    order:1;
+    font-weight: lighter;
+    font-size:medium;
+    margin-left: 10px;
+
+}
+
+.flexbox-item-1 div h3 {
+
+    order:2;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size:22px;
+    font-weight: 500;
+    white-space: nowrap;
+
+}
+
+.flexbox-item-1 div button {
+
+    order:3;
+    height: 40px;
+    width: 80px;
+    background-color: #93c900;
+    padding:10px;
+    border-radius: 5px;
+    border: white;
+    
+}
+
+.flexbox-item-1 div button:hover {
+    transition: 1s ease-in-out;
+    background: #c5dc95;
+}
+
+.flexbox-item-1 div button img {
+    height: 20px;
+}
+
+.flexbox-item-1 .disable h3 {
+    opacity: 30%;
+}
+
+.flexbox-item-1 .disable button {
+    opacity: 30%;
+    background-color: gray;
 }
 
 /* ======= END LISTADO DE PRODUCTOS ======= */ 
@@ -75,7 +134,7 @@ body {
 .flexbox-item-2 div img {
 
     order:1;
-    width: 50px;
+    height: 70px;
     width: 70px;
     border: 1px solid #e4e4e4;
 
@@ -112,6 +171,7 @@ body {
 
     margin-left: 10px;
     margin-right: 130px;
+    white-space: nowrap;
 
 }
 
@@ -125,6 +185,7 @@ body {
     
     font-size:  25px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 
@@ -161,7 +222,7 @@ body {
 
         margin-left: 25px;
         font-size: 20px;
-        
+
     }
 
 }
