@@ -1,0 +1,234 @@
+
+body {
+
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color:black
+
+}
+
+.flex-container {
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items:flex-start;
+
+}
+
+/*  ======= START LISTADO DE PRODUCTOS ======= */ 
+
+.flexbox-item-1 {
+  
+  order: 1;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 10px; 
+
+}
+
+.flexbox-item-1 div {
+
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: auto;
+  height: auto;
+
+}
+
+.flexbox-item-1 div p {
+
+  order:1;
+  font-weight: lighter;
+  font-size:medium;
+  margin-left: 10px;
+
+}
+
+.flexbox-item-1 div h3 {
+
+  order:2;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size:22px;
+  font-weight: 500;
+  white-space: nowrap;
+
+}
+
+.flexbox-item-1 div button {
+
+  order:3;
+  height: 40px;
+  width: 80px;
+  background-color: #93c900;
+  padding:10px;
+  border-radius: 5px;
+  border: white;
+  
+}
+
+.flexbox-item-1 div button:hover {
+  transition:0.1s ease-in-out;
+  background:lightgreen;
+  border:1px solid lightseagreen;
+  height: 50px;
+  width: 90px;
+}
+
+.flexbox-item-1 div button img {
+  height: 20px;
+}
+
+.flexbox-item-1 .disable h3 {
+  opacity: 30%;
+}
+
+.flexbox-item-1 .disable button {
+  opacity: 30%;
+  background-color: gray;
+}
+
+/* ======= END LISTADO DE PRODUCTOS ======= */ 
+
+
+/* ======= START CESTA ======= */
+
+.flexbox-item-2 {
+
+  order: 2;
+  border: transparent;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px #ddd; 
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.flexbox-item-2 b {
+
+  color:#c5dc95;
+  text-align: left;
+  padding-left: 5px;
+  
+}
+
+.flexbox-item-2 hr:first-of-type {
+  border: 1px solid #b2d556;
+}
+
+.flexbox-item-2 hr {
+  border: 1px solid #e4e4e4;
+}
+
+.flexbox-item-2 div {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+
+}
+
+.flexbox-item-2 div img {
+
+  order:1;
+  height: 70px;
+  width: 70px;
+  border: 1px solid #e4e4e4;
+
+}
+
+.flexbox-item-2 div p {
+
+  order:2;
+  font-weight: lighter;
+  font-size:medium;
+  margin-left: 10px;
+
+}
+
+.flexbox-item-2 div h3 {
+
+  order:3;
+  margin-left: 50px;
+  font-size:23px;
+  font-weight: 400;
+
+}
+
+
+.flexbox-item-2 div:last-child {
+
+  display: flex;
+  justify-content:start;
+  padding: 10px;
+  
+}
+
+.flexbox-item-2 div:last-child p {
+
+  margin-left: 10px;
+  margin-right: 130px;
+  white-space: nowrap;
+
+}
+
+.flexbox-item-2 div:last-child h2 {
+  
+  font-size:  25px;
+  font-weight: 600;
+}
+
+.flexbox-item-2 div:last-child h3 {
+  
+  font-size:  25px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+@media screen and (max-width:550px){
+
+
+  .flexbox-item-2 div:not(:last-of-type){
+      display:none !important;
+  }
+
+  .flexbox-item-2 hr:not(:first-of-type){
+      display:none !important;
+  }
+  
+  .flexbox-item-2 {
+
+      width: 90%;
+      height: auto;
+
+  }
+
+  .flexbox-item-2 div:last-child h2 {
+      font-size: 20px;
+  }
+
+  .flexbox-item-2 div:last-child p {
+
+      margin-left: 7px;
+      margin-right: 0px;
+  
+  }
+
+  .flexbox-item-2 div:last-child h3 {
+
+      margin-left: 25px;
+      font-size: 20px;
+
+  }
+
+}
+
+/* ======= END CESTA ======= */
