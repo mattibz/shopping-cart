@@ -1,35 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const CartComponent = () => {
+const CartComponent = ({products,setProducts}) => {
+
+    const [productsInCart,setProductsInCard] = useState([]);
+
+    useEffect(() => {
+
+        console.log('loading cart products ...');
+        getProductsInCart();
+
+    },[products]);
+
+    const getProductsInCart = () => {
+
+        const cartProducts = products.filter( (product) =>{
+            if(product.selected){
+                return product;
+            }
+        });
+        
+        console.log('refresh cart products ...');
+        setProductsInCard(cartProducts);
+
+    }
 
     return(
         <>
         
-        <b>MI CESTA:</b>
-        <hr/>
-        <div>
-            <img src={require('../assets/xhekpon-crema.jpg')} />
-            <p>Xhekpon® crema facial 40ml</p>
-            <h3>6,49 €</h3>
-        </div>
-        <hr/>
-        <div>
-            <img src={require('../assets/cerave-crema.jpg')}/>
-            <p>Cerave ® Crema Hidratante 340ml</p>
-            <h3>11,70 €</h3>
-        </div>
-        <hr/>
-        <div>
-            <img src={require('../assets/hyabak-solucion.jpg')}/>
-            <p>Hyabak Solución 10ml</p>
-            <h3>9,48 €</h3>
-        </div>
-        <hr/>
-        <div>
-            <h2>TOTAL</h2>
-            <p>(3 productos)</p>
-            <h3>27,06 €</h3>
-        </div>
+            <b>MI CESTA:</b>
+            <hr/>
+            {
+                productsInCart.map(product => {
+                    
+                    return(
+                        <>
+                            <div>
+                                <img src={require(`../assets/${product.image}`)} />
+                                <p>{product.name}</p>
+                                <h3>{product.price} €</h3>
+                            </div>
+                            <hr/>
+                        </>
+                    )
+                })
+            }
+            
+            <div>
+                <h2>TOTAL</h2>
+                <p>(3 productos)</p>
+                <h3>27,06 €</h3>
+            </div>
 
         </>
     )

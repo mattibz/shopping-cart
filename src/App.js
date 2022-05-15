@@ -10,13 +10,13 @@ function App() {
   <div className="flex-container">
 
       <div className="flexbox-item-1">
-          <ProductsListComponent products={products} setProducts={setProducts} />
+            <ProductsListComponent products={products} setProducts={setProducts} />
       </div>
 
 
 
       <div className="flexbox-item-2">
-          <CartComponent />
+            <CartComponent products={products} setProducts={setProducts} />
       </div>
 
   </div>

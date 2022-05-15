@@ -5,7 +5,6 @@ import toast, { Toaster } from 'react-hot-toast';
 const ProductsListComponent = ({products,setProducts}) => {
 
 
-    //const [products,setProducts] = useState([]);
     const [loading,setLoading] = useState(true);
 
     useEffect(() => {
@@ -33,12 +32,11 @@ const ProductsListComponent = ({products,setProducts}) => {
                 console.log(`error from getProducts() : ${ex.message}`)
             }
 
-        },1000);
+        },5000);
 
     }
 
-    const addProductToCart = (id) => {
-        
+    const addProductToCart = (id) => {   
 
         const productsListUpdate = products.map( product => {
 
@@ -76,14 +74,14 @@ const ProductsListComponent = ({products,setProducts}) => {
                  <Toaster></Toaster>
 
                 {
-                    products.map(product => {
+                    products.map((product,index) => {
+
 
                         if(product.selected){
 
                             return(
                                 <>
-                                     <Toaster position='top-left'></Toaster>
-                                    <div className='disable' key={product.id}> 
+                                    <div className='disable'>  
                                         <p>{product.name}</p> 
                                         <h3>{product.price} €</h3>
                                         <button onClick={ notify }><img src={require('../assets/icono/add-to-cart.png')}/></button>
@@ -95,7 +93,7 @@ const ProductsListComponent = ({products,setProducts}) => {
 
                             return(
                                 <>
-                                    <div key={product.id}> 
+                                    <div> 
                                         <p>{product.name}</p> 
                                         <h3>{product.price} €</h3>
                                         <button onClick= { () => addProductToCart(product.id) }><img src={require('../assets/icono/add-to-cart.png')}/></button>
