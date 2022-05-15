@@ -36,13 +36,14 @@ const ProductsListComponent = ({products,setProducts}) => {
 
     }
 
+
     const addProductToCart = (id) => {   
 
         const productsListUpdate = products.map( product => {
 
             if(product.id === id) {
-                    product.selected = true;
-                    console.log(` product with name ${product.name} added to cart.`);
+                product.selected = true;
+                console.log(` product with name ${product.name} added to cart.`);
             } 
 
             return product;
@@ -54,7 +55,10 @@ const ProductsListComponent = ({products,setProducts}) => {
        
     }
 
-    const notify = () => toast('You can not add more of this product to the cart');
+
+
+    const notify = () => toast('You can not add more this product to the cart.');
+
 
 
     if(loading){

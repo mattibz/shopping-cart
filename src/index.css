@@ -71,16 +71,27 @@ body {
   
 }
 
+.flexbox-item-1 .disable button:hover {
+
+  opacity: 30%;
+  background-color: gray;
+  height: 40px;
+  width: 80px;
+  border:white;
+
+}
+
 .flexbox-item-1 div button:hover {
   transition:0.1s ease-in-out;
-  background:lightgreen;
+  background:#b2d556;
   border:1px solid lightseagreen;
+  cursor: pointer;
   height: 50px;
   width: 90px;
 }
 
 .flexbox-item-1 div button img {
-  height: 20px;
+  height: 18px;
 }
 
 .flexbox-item-1 .disable h3 {
@@ -162,6 +173,21 @@ body {
 
 }
 
+.flexbox-item-2 button {
+
+  background-color:transparent;
+  border:0px;
+  margin:0px;
+  width: 40px;
+  height: 30px;
+  font-size: 25px;
+  color:black;
+  
+}
+
+.flexbox-item-2 button:hover {
+  color:#b2d556;
+}
 
 .flexbox-item-2 div:last-child {
 
