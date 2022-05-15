@@ -140,8 +140,9 @@ body {
 .flexbox-item-2 div {
 
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
+  /*gap: 10px;*/
   margin: 10px;
 
 }
@@ -161,6 +162,7 @@ body {
   font-weight: lighter;
   font-size:medium;
   margin-left: 10px;
+  width: 207px; /* check */
 
 }
 
@@ -175,9 +177,10 @@ body {
 
 .flexbox-item-2 button {
 
+  order:4;
   background-color:transparent;
   border:0px;
-  margin:0px;
+  margin-left:10px;
   width: 40px;
   height: 30px;
   font-size: 25px;
@@ -219,7 +222,7 @@ body {
 }
 
 
-@media screen and (max-width:550px){
+@media screen and (max-width:600px){
 
 
   .flexbox-item-2 div:not(:last-of-type){

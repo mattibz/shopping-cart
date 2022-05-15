@@ -1,6 +1,7 @@
 import React, { Profiler, useEffect, useState } from 'react'
 import { SpinnerRoundFilled } from 'spinners-react';
 import toast, { Toaster } from 'react-hot-toast';
+import Helper from '../helpers/helper';
 
 const ProductsListComponent = ({products,setProducts}) => {
 
@@ -33,6 +34,31 @@ const ProductsListComponent = ({products,setProducts}) => {
             }
 
         },5000);
+    
+        /* ======== FORMA ALTERNATIVA SIN async/await ======== */
+        /*const helper = new Helper();
+
+        helper.getData()
+        .then(data => {
+            setProducts(data);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.log('error al obtener la data ... ');
+        });*/
+        /* ======== END FORMA ALTERNATIVA SIN async/await ======== */
+        
+        
+        /* ======== FORMA ALTERNATIVA CON AXIOS ======== */
+        /*setTimeout( async () => {
+
+            const helper = new Helper();
+            const { data } = await helper.getDataWithAxios();
+            setProducts(data);
+            setLoading(false);
+
+        },5000);*/
+        /* ======== END FORMA ALTERNATIVA CON AXIOS ======== */
 
     }
 
