@@ -18,7 +18,7 @@ const ProductsListComponent = ({products,setProducts}) => {
 
     const getProducts = () => {
 
-        setTimeout( async () => {  // simulamos una request asincrona con un delay de 5 seg.
+        setTimeout( async () => { 
 
             try{
             
@@ -123,7 +123,7 @@ const ProductsListComponent = ({products,setProducts}) => {
 
                             return(
                                 <>
-                                    <div> 
+                                    <div data-testid="product-item"> 
                                         <p>{product.name}</p> 
                                         <h3>{product.price} €</h3>
                                         <button onClick= { () => addProductToCart(product.id) }><img src={require('../assets/icono/add-to-cart.png')}/></button>
